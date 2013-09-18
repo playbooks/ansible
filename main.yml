@@ -1,0 +1,7 @@
+---
+-
+  hosts: all
+
+  tasks:
+  - include: $home/ansible/tasks/install.yml
+

@@ -1,0 +1,22 @@
+---
+- name: update apt
+  command: apt-get update
+  sudo: true
+
+# this package is required by the 'apt' ansible module
+#
+- name: install the python-apt package
+  command: apt-get install -y python-apt
+  sudo: true
+
+# this package is require by the 'apt_repository' ansible module 
+#
+- name: install python-software-properties
+  apt: pkg=python-software-properties state=present
+  sudo: true
+
+# this package is required by the 'postgresql_user' ansible module 
+#
+- name: install python-psycopg2
+  apt: pkg=python-psycopg2 state=present
+  sudo: true
